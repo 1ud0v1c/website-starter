@@ -3,6 +3,7 @@
 	require_once "core/form.php";
 	require_once "core/parsedown.php";
 	require_once "core/curl.php";
+	require_once "core/image-handler.php";
 ?>
 
 <html>
@@ -16,6 +17,12 @@
 	<div class="header"></div>
 
 	<div class="content">
+		<?php
+			$img_handler = new Image();
+			$img_handler->createImage();
+			// $img_handler->generateMin("img/background.jpg", "img");
+		?>
+
 		<?php
 			$form = new Form();
 			$form->input("text", "name", "John Doe");
