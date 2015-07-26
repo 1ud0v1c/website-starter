@@ -2,6 +2,7 @@
 	require_once "core/db.php";
 	require_once "core/form.php";
 	require_once "core/parsedown.php";
+	require_once "core/curl.php";
 ?>
 
 <html>
@@ -15,7 +16,7 @@
 	<div class="header"></div>
 
 	<div class="content">
-			<?php
+		<?php
 			$form = new Form();
 			$form->input("text", "name", "John Doe");
 			$form->input("checkbox", "genre");
