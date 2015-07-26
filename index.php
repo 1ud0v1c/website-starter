@@ -15,8 +15,7 @@
 	<div class="header"></div>
 
 	<div class="content">
-
-		<?php
+			<?php
 			$form = new Form();
 			$form->input("text", "name", "John Doe");
 			$form->input("checkbox", "genre");
@@ -35,11 +34,10 @@
 			}
 
 			$md = new Parsedown();
-			echo $md->text('Hello _Parsedown_ !');
+			$text = file_get_contents("markdown.txt");
+			echo $md->text($text);
 		?>
 	</div>
-
-
 
 </body>
 </html>
