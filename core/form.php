@@ -12,7 +12,7 @@
 			echo "<textarea name='".$name."' placeholder='".$placeholder."' cols='45' rows='5'></textarea>";
 		}
 
-		public function select($name, $data =array()) {
+		public function select($name, $data = array()) {
 			echo "<select name='".$name."'>";
 			foreach ($data as $key => $value) {
 				echo "<option value='".$key."'>$value</option>";

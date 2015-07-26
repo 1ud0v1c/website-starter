@@ -35,7 +35,7 @@ function filtre(id_input,id_ul) {
     $("#"+id_input).focus().keyup(function() {
         var input = $(this);
         var val = input.val();
-        if(val == '') {
+        if(val === '') {
             $("#"+id_ul+" li").show();
             $("#"+id_ul+" span").removeClass('highlighted');
             return true;
@@ -53,7 +53,7 @@ function filtre(id_input,id_ul) {
                 var string = '';
                 for (var i in resulats) {
                     if(i > 0) {
-                        if(i%2 == 0){
+                        if(i%2 === 0){
                             string += '<span class="highlighted">'+resulats[i]+'</span>';
                         } else {
                             string += resulats[i];
@@ -79,22 +79,6 @@ function scrollToTop(id) {
         else{
             $('#'+id).fadeIn();
         }
-    });
-}
-
-function ajax(div, url, data) {
-    $(div).click(function(event) {
-        event.preventDefault();
-        $.ajax({
-            method: "POST",
-            url: url,
-            data: {
-                data
-            }
-        }).done(function(res) {
-            var obj = $.parseJSON(res);
-
-        });
     });
 }
 

@@ -1,6 +1,7 @@
 <?php
 	require_once "core/db.php";
 	require_once "core/form.php";
+	require_once "core/parsedown.php";
 ?>
 
 <html>
@@ -18,6 +19,7 @@
 		<?php
 			$form = new Form();
 			$form->input("text", "name", "John Doe");
+			$form->input("checkbox", "genre");
 			$form->select("land", array(
 				"1" => "France",
 				"2" => "England"
@@ -27,14 +29,17 @@
 		 ?>
 		<img src="http://placekitten.com/400/600" class="box-shadow" alt="" />
 
+		<?php
+			if(isset($_POST['post_form'])) {
+				var_dump($_POST);
+			}
+
+			$md = new Parsedown();
+			echo $md->text('Hello _Parsedown_ !');
+		?>
 	</div>
 
 
-	<?php
-		if(isset($_POST['post_form'])) {
-			var_dump($_POST);
-		}
-	?>
 
 </body>
 </html>
