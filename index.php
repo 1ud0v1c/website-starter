@@ -19,8 +19,8 @@
 	<div class="content">
 		<?php
 			$img_handler = new Image();
-			$img_handler->createImage();
-			// $img_handler->generateMin("img/background.jpg", "img");
+			$img_handler->createImage("Logo", "img/logo.png");
+			$img_handler->generateMin("img/background.jpg", "img");
 		?>
 
 		<?php

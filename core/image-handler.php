@@ -36,10 +36,24 @@
 			return true;
 		}
 
-		public function createImage() {
-			// TODO
-		}
+		public function createImage($text, $path, $background = "33-141-255", $textColor = "255-255-255", $imageWidth = 370, $imageHeight = 200) {
+			header("Content-type : image/png");
 
+			$image = imagecreate($imageWidth, $imageHeight);
+
+			$background = explode("-", $background);
+			$navy = imagecolorallocate($image, $background[0], $background[1], $background[2]);
+			$textColor = explode("-", $textColor);
+			$white = imagecolorallocate($image, $textColor[0], $textColor[1], $textColor[2]);
+
+			$font = 22;
+			$fontHeight = imagefontheight($font);
+			$fontWidth = imagefontwidth($font);
+			$textWidth = $fontWidth * strlen($text);
+
+			imagestring($image, $font, ceil(($imageWidth - $textWidth)/2), ceil(($imageHeight - $fontHeight)/2), $text, $white);
+			imagepng($image, $path);
+		}
 	}
 
 ?>

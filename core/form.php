@@ -20,8 +20,8 @@
 			echo "</select>";
 		}
 
-		public function submit() {
-			echo "<input type='submit' name='post_form' value='Send' />";
+		public function submit($value = 'Valider') {
+			echo "<input type='submit' name='post_form' value='".$value."' />";
 			echo "</form>";
 		}
 	}

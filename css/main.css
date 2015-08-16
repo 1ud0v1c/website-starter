@@ -55,3 +55,24 @@ input[type="submit"]:hover {
   -webkit-box-shadow: 1px 1px 12px #555;
   box-shadow: 1px 1px 12px #555;
 }
+
+p {
+	font-family: Georgia, Verdana, sans-serif;
+	color: #4E4E4E;
+	line-height: 22px;
+	letter-spacing: 0.6px;
+	font-size: 18px;
+}
+
+pre {
+	padding: 15px;
+}
+th {
+	background: #42ADD0;
+	color: white;
+	font-weight: normal;
+}
+th, td {
+	padding: 5px 10px;
+	border: 1px solid #ADADAD;
+}
